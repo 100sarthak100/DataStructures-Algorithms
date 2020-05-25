@@ -1,0 +1,60 @@
+Microkernel in OS :
+Kernel is the core part of an operating system which manages system resources. 
+It also acts like a bridge between application and hardware of the computer. 
+It is one of the first programs loaded on start-up (after the Bootloader).
+
+Kernel mode and User mode of CPU operations :
+The CPU can execute certain instruction only when it is in the kernel mode. 
+These instruction are called privilege instruction.
+They allow implementation of special operation whose execution 
+by the user program could interface with the functioning of 
+operating system or activity of another user program. 
+For example, instruction for managing memory protection.
+
+MicroKernel :
+Microkernel is one of the classification of the kernel. 
+Being a kernel it manages all system resources. But in a 
+microkernel, the user services and kernel services are 
+implemented in different address space. The user services are 
+kept in user address space, and kernel services are kept under 
+kernel address space, thus also reduces 
+the size of kernel and size of operating system as well.
+
+The microkernel is solely responsible for the most important 
+services of operating system they are named as follows:
+
+Inter process-Communication
+Memory Management
+CPU-Scheduling
+
+Monolithic Kernel:
+Monolithic Kernel is another classification of Kernel. Like 
+microkernel this one also manages system resources between 
+application and hardware, but user services 
+and kernel services are implemented under same address space.
+It increases the size of the kernel, thus increases size of operating system as well.
+
+microvernel vs monolithic kernel :
+
+microkernel is smaller in size.
+It is larger than microkernel.
+
+Only bare minimum code is placed inside the kernel (only basic memory management and Inter Process Communication code)
+The entire O.S. is placed inside the kernel
+
+Here the kernel is broken down into processes called as servers.
+It runs as a single large process.
+
+As services(Servers provide services) are separated they have different address spaces.
+As all the services are placed inside the kernel, they have a single address space.
+
+slow execution.
+fast execution.
+
+More Secure (Even if one service crashes, others can function properly because of separation)
+Less Secure (If one service fails, entire system crashes)
+
+
+
+
+

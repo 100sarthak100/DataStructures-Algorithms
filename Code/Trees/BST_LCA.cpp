@@ -1,0 +1,28 @@
+// least common ancestor O(n) (for BST)
+// iterative
+Node *lca(Node *root, int v1, int v2)
+{
+    while (root != NULL)
+    {
+        if (root->data > v1 && root->data > v2)
+            root = root->left;
+        else if (root->data < v1 && root->data < v2)
+            root = root->right;
+        else
+            break;
+    }
+    return root;
+}
+
+// recursive
+Node* lca(Node* root, int v1, int v2)
+{
+    if(root == NULL) return NULL;
+
+    if(root->data > v1 && root->data > v2)
+        lca(root->left,v1,v2);
+    else if(root->data < v1 && root->data < v2)
+        lca(root->right,v1,v2);
+
+    return root;
+}

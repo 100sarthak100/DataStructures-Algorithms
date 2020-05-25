@@ -1,0 +1,178 @@
+What is a process and process table? What are different states of process
+
+processes are the instance of a program in execution. eg web browser is a process.
+The operating system is responsible for managing all the processes that are running on a computer and 
+allocated each process a certain amount of time to use the processor.
+os allocates resources to process.
+to keep track of state of all the processes a process table is made.
+Inside this table, every process is listed along with the resources 
+the processes is using and the current state of the process
+process has 3 state: running, ready, waiting. 
+The running state means that the process has all the resources it need for execution and it has been 
+given permission by the operating system to use the processor
+
+The responsibility of determining how to allocate processor time among all the ready processes is known as scheduling.
+non-preemptive scheduling In this approach, processes are give control of the processor until they complete execution 
+or voluntarily move themselves to a different state
+Three strategies for process scheduling are First Come First Serve, Round Robin, and Shortest Process Next
+First Come First Serve Scheduling
+This non-preemptive scheduling algorithm follows the first-in, first-out (FIFO) policy. As each process becomes ready, it joins the ready queue. When the current running process finishes execution, the oldest process in the ready queue is selected to run next.
+
+Round Robin Scheduling
+This scheduling policy gives each process a slice of time (i.e., one quantum) before being preempted. As each process becomes ready, it joins the ready queue. A clock interrupt is generated at periodic intervals. When the interrupt occurs, the currently running process is preempted, and the oldest process in the ready queue is selected to run next. The time interval between each interrupt may vary.
+
+Shortest Process Next
+This non-preemptive scheduling algorithm favors processes with the shortest expected execution time. As each process becomes ready, it joins the ready queue. When the current running process finishes execution, the process in the ready queue with the shortest expected execution time is selected to run next.
+
+
+What is a Thread? What are the differences between process and thread?
+
+A thread is a single sequence stream within in a process.
+they are sometimes called lightweight processes. 
+Threads are popular way to improve application through parallelism. For example, in a browser, multiple tabs can be different threads. MS word uses multiple threads, 
+one thread to format the text, other thread to process inputs, etc.
+A thread has its own program counter (PC), a register set, and a stack space.
+The CPU switches rapidly back and forth among the threads giving illusion that the threads are running in parallel.
+ a thread can be in any of several states (Running, Blocked, Ready or Terminated)
+
+Similarities
+Like processes threads share CPU and only one thread active (running) at a time.
+Like processes, threads within a processes, threads within a processes execute sequentially.
+Like processes, thread can create children.
+And like process, if one thread is blocked, another thread can run.
+Differences
+Unlike processes, threads are not independent of one another.
+Unlike processes, all threads can access every address in the task .
+Unlike processes, thread are design to assist one other. Note that processes might or might not assist one another because processes may originate from different users.
+
+
+syllabus -
+OS: Basic
+CPU/Process scheduling
+process synchronization
+Deadlocks & threads
+memory management
+File & disk management
+UNIX commands
+
+OS: Basic
+What is OS?
+An operating system is a program that controls the execution of application programs and 
+acts as an interface between the user of a computer and the computer hardware.
+An operating system is concerned with the allocation of resources and services, such as 
+memory, processors, devices, and information.
+
+Function of OS -
+An OS allows the computer system resources to be used in an efficient manner.
+OS is basically a resource manager.
+
+Types of OS -
+1. Batch OS : 
+This type of operating system does not interact with the computer directly. 
+There is an operator which takes similar jobs having same requirement and group 
+them into batches. 
+It is the responsibility of operator to sort the jobs with similar needs.
+Advantages :
+It is easy to manage large work repeatedly in batch systems.
+The idle time for batch system is very less.
+Disadvantages :
+Batch systems are hard to debug.
+The other jobs will have to wait for an unknown time if any job fails.
+Example : Bank Statements etc.
+
+2. Time Sharing OS :
+Each task is given some time to execute, so that all the tasks work smoothly.
+These systems are also known as Multitasking Systems. 
+The time that each task gets to execute is called quantum. 
+After this time interval is over, OS switches over to next task.
+Advantages:
+Each task gets an equal opportunity.
+CPU idle time can be reduced.
+Diasadvantages:
+Reliability problem.
+Reliability problem.
+Example: Unix etc.
+
+3. Distributed OS :
+Various autonomous interconnected computers 
+communicate each other using a shared communication network.
+Independent systems possess their own memory unit and CPU. 
+These are referred as loosely coupled systems or distributed systems.
+remote access is enabled within the devices connected in that network.
+Advantages:
+Failure of one will not affect the other network communication, as all systems are independent from each other.
+These systems are easily scalable as many systems can be easily added to the network.
+Disadvantage:
+Failure of the main network will stop the entire communication.
+These types of systems are not readily available as they are very expensive.
+Example: LOCUS etc.
+
+4. Network OS :
+These systems run on a server and provide the capability to manage data, users, groups, security, 
+applications, and other networking functions.
+These type of operating systems allow shared access of files, printers, security, applications, 
+and other networking functions over a small private network.
+all the users are well aware of the underlying configuration, of all other users within the network, their individual connections etc. 
+and that’s why these computers are popularly known as tightly coupled systems.
+Advantages:
+Highly stable centralized servers.
+Server access are possible remotely from different locations and types of systems.
+Diasadvantages:
+Servers are costly.
+User has to depend on central location for most operations.
+Example: Microsoft Windows Server 2003,UNIX, Linux, Mac OS X etc.
+
+5. Real Time OS :
+These types of OSs serves the real-time systems. The time interval required to process and respond to inputs is very small. 
+This time interval is called response time.
+Real-time systems are used when there are time requirements are very strict like missile systems,
+air traffic control systems, robots etc.
+There are two types of RTOS : Hard RTOS & Soft RTOS.
+Advantages:
+Maximum utilization of devices and system,thus more output from all the resources.
+Since size of programs are small, RTOS can also be used in embedded systems 
+like in transport and others.
+Diasadvantages:
+Very few tasks run at the same time and their concentration is very less on 
+few applications to avoid errors.
+Example: medical imaging system, air traffic control system etc.
+
+Difference between Multiprogramming, multitasking, multithreading 
+and multiprocessing
+Multiprogramming – A computer running more than one program at a time 
+(like running Excel and Firefox simultaneously).
+In a computer system, there are multiple processes waiting to be executed.
+These processes are also known as jobs.
+these processes are initially kept in an area called job pool.
+CPU selects one job out of all these waiting jobs, brings it from the job pool to main memory 
+and starts executing it
+
+Multiprocessing – A computer using more than one CPU at a time.
+The main advantage of multiprocessor system is to get more work done in a shorter period of time.
+Multiprocessing refers to the hardware (i.e., the CPU units) rather than the software (i.e., running processes). If the underlying hardware provides more than one processor then that is multiprocessing. 
+It is the ability of the system to leverage multiple processors’ computing power.
+
+The difference between multiprocessing and multi programming is that Multiprocessing 
+is basically executing multiple processes at the same time on multiple processors, 
+whereas multi programming is keeping several 
+programs in main memory and executing them concurrently using a single CPU only.
+
+Multitasking – Tasks sharing a common resource (like 1 CPU).
+Multitasking is a logical extension of multi programming. The major way in 
+which multitasking differs from multi programming is that multi programming works 
+solely on the concept of context switching 
+whereas multitasking is based on time sharing alongside the concept of context switching.
+In a more general sense, multitasking refers to having multiple programs, processes, 
+tasks, threads running at the same time. This term is used in modern operating systems 
+when multiple tasks share a common processing resource (e.g., CPU and Memory).
+
+Multithreading is an extension of multitasking.
+A thread is a basic unit of CPU utilization. Multi threading is an execution model that allows a single
+process to have multiple code segments (i.e., threads) running concurrently 
+within the “context” of that process.
+e.g. VLC media player, where one thread is used for opening the VLC media player, 
+one thread for playing a particular song and another thread for adding new songs to the playlist.
+
+We can think of threads as child processes that share the parent process resources 
+but execute independently
+

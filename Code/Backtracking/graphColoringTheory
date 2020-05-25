@@ -1,0 +1,27 @@
+Graph Coloring Problem -
+Vertex Coloring - find a way of coloring the vertices of a graph such that no 
+                    two adjacent vertices are colored using same color
+Edge Coloring - No vertex is incident to two edges of same color
+Face Coloring - (Geographical Map Coloring) can be transformed into vertex coloring.
+
+Chromatic Number: The smallest number of colors needed to color a graph G is 
+called its chromatic number
+
+Applications of Graph Coloring:
+Making schedule or time table - This problem can be represented as a graph where 
+every vertex is a subject and an edge between two vertices mean there is a common 
+student. So this is a graph coloring problem where minimum number of time slots is 
+equal to the chromatic number of the graph.
+
+Mobile Radio frequency assignment
+Sudoku
+Register Allocation: In compiler optimization, register allocation is the process 
+of assigning a large number of target program variables onto a small number of CPU registers. 
+This problem is also a graph coloring problem.
+Bipartite Graphs: We can check if a graph is Bipartite or not by coloring the graph using 
+two colors. If a given graph is 2-colorable, then it is Bipartite, otherwise not.
+
+Hamiltonian Path in an undirected graph is a path that visits each vertex exactly 
+once. A Hamiltonian cycle (or Hamiltonian circuit) is a Hamiltonian Path such that 
+there is an edge (in the graph) from the last vertex to the first vertex of the 
+Hamiltonian Path.
