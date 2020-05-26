@@ -9,6 +9,36 @@ Edit distance
 longest sequence of positive integers
 maximum Sum Increasing subsequence
 
+painters partition problem
+
+0 1 knapsack problem
+subset sum
+equal sum partition subset (in 2 subset)
+minimum sum difference subset
+partition to k equal sum subset
+
+egg dropping problem
+
+boxstacking problem
+celebrity problem
+max no of segment of length (x, y, z)
+mobile numeric keypad problem
+optimal strategy for a game
+
+coin count no of ways
+min coin count
+jump game array (can reach or not)
+min no of jumps to end
+stickler thief
+decoding digits sequence
+largest independent set BT
+maximum non adjacency array sum
+
+min cost path
+gold mine problem
+
+
+
 subarrays/substring - 
 A subbarray is a contiguous part of array. An array that is 
 inside another array. For example, consider the array 

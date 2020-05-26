@@ -98,5 +98,4 @@ int main()
     isPossible(arr, n, k);
 }
 
-// if k == 2 (dp problem)
 

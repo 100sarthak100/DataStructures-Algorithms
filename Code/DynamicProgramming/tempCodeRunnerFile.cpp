@@ -1,2 +1,3 @@
-for (int i = 0; i < n; ++i)
-        cout << lis[i] << " ";
+for(auto i : ret)
+        cout<<i<<" ";
+    cout<<endl;
