@@ -44,3 +44,34 @@ int main()
         << len; 
     return 0; 
 }
+
+// Input: "pwwkew"
+// Output: 3
+// Explanation: The answer is "wke", with the length of 3. 
+//              Note that the answer must be a substring, "pwke" 
+//              is a subsequence and not a substring.
+
+// best solution
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+    if(s.size() < 2) return s.size();
+    bool MAP[256] = {false};
+    int start = 0, end = 0, longest = 0;
+    while(end < s.size())
+    {
+        if(MAP[s[end]])
+        {
+            MAP[s[start]] = false;
+            start++;
+        }
+        else
+        {
+            MAP[s[end]] = true;
+            end++;
+            longest = max(longest,end - start);
+        }
+    }
+    return longest;
+    }
+};

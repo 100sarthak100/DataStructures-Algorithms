@@ -26,6 +26,7 @@ int diameter(Node *root)
     int ans = INT_MIN;
     int height_of_tree = height(root, ans);
     cout << height_of_tree << endl;
+    // ans - diameter of the tree
     return ans;
 }
 

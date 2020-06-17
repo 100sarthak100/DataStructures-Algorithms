@@ -1,4 +1,18 @@
 numeric keypad question
-partition subset sum
+
 min cost path dp
-egg dropping
+
+Find the maximum element in an array which is 
+first increasing and then decreasing
+
+sorting linked list
+merge two sorted linked lists
+merge two sorted arrays
+
+adobe
+construct a tree from inorder and preorder traversals
+quadirateral overlap (find if 2 rectangles overlap)
+
+https://leetcode.com/discuss/general-discussion/685315/biweekly-contest-28
+Merge two sorted Arrays without extra space 
+Merge k sorted arrays

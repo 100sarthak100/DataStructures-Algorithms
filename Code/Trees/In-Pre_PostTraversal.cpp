@@ -70,6 +70,7 @@ void inOrder(Node *head) //LDR (non decreasing order)
     inOrder(head->right);
 }
 
+// O(N)
 void inOrderIterative(Node *head)
 {
     stack<Node *> st;

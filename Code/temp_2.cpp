@@ -1,87 +1,80 @@
-#include <iostream>
-using namespace std;
-#define N 9
-
-bool findUnassignedLocation(int grid[N][N], int &row, int &col)
+void inOrder(Node* root)
 {
-    for(row = 0; row < N; row++)
-        for(col = 0; col < N; col++)
-            if(grid[row][col] == 0)
-                return true;
-    return false;
-}
-bool usedInRow(int grid[][N], int row, int num)
-{
-    for(int col= 0; col<N;col++)
-        if(grid[row][col] == num)
-            return true;
-    return false;
-}
-
-bool usedInCol(int grid[][N], int col, int num)
-{
-    for(int row = 0; row < N; row++)
-        if(grid[row][col] == num)
-            return true;
-return false;
-}
-
-bool usedInBox(int grid[][N], int boxStartRow, int boxStartCol, int num)
-{
-    for(int row = 0; row < 3; row++)
-        for(int col = 0; col < 3; col++)
-            if(grid[row + boxStartRow][col + boxStartCol] == num)
-                return true;
-    return false;
-}
-
-bool isSafe(int grid[N][N], int row, int col, int num)
-{
-    return !usedInRow(grid, row, num)
-        && !usedInCol(grid, col, num)
-        && !usedInBox(grid, row - row%3, col - col%3, num)
-        && grid[row][col] == 0;
-}
-
-bool solveSudoku(int grid[N][N])
-{
-    int row, col;
-    if(!findUnassignedLocation(grid, row, col))
-        return true;
+    if(root == NULL) return;
+    stack<Node*> st;
+    Node* curr = root;
     
-    for(int num = 1; num <= 9; num++)
+    while(curr != NULL && !st.empty())
     {
-        if(isSafe(grid, row, col, num))
+        while(curr != NULL)
         {
-            grid[row][col] = num;
-            if(solveSudoku(grid))
-                return true;
-            grid[row][col] = 0;
+            st.push(curr);
+            curr = curr->left;
+        }
+        if(!st.empty())
+        {
+            curr = st.top();
+            st.pop();
+            cout<<temp->data<<" ";
+            curr = curr->right;
         }
     }
-    return false;
 }
 
-void printSoln(int grid[][N])
+void preOrder(Node* root)
 {
-    for(int row = 0; row < N; row++)
-        for(int col = 0; col < N; col++)
-            cout<<grid[row][col]<<" ";
-    cout<<endl;
+    if(root == NULL) return;
+    stack<Node*> st; 
+    Node* curr = root;
+
+    while(curr != NULL && !st.empty())
+    {
+        while(curr !=  NULL)
+        {
+            cout<<curr->data<<" ";
+            if(curr->right)
+                st.push(curr->right);
+            curr = curr->left;
+        }
+        if(!st.empty())
+        {
+            curr = st.top();
+            st.pop();
+        }
+    }
 }
 
-int main() {
-	int t;cin>>t;
-	while(t--)
-	{
-	    int grid[N][N];
-	    for(int i = 0;i <N;i++)
-	        for(int j = 0;j<N;j++)
-	            cin>>grid[i][j];
-	   
-	    if(solveSudoku(grid) == true)
-	        printSoln(grid);
-	    else cout<<-1;
-	}
-	return 0;
+lrd
+void postOrder(Node* root)
+{
+    if(root == NULL) return;
+    stack<Node*> s1, s2;
+    s1.push(root);
+    Node* temp;
+    while(!s1.empty())
+    {
+        temp = s1.top();
+        s1.pop();
+        s2.push(temp);
+
+        if(temp->left)
+            s1.push(temp->left);
+        if(temp->right)
+            s1.push(temp->right);
+    }
+    while(!s2.empty())
+    {
+        temp = s2.top();
+        s2.pop();
+        cout<<temp->data<<" ";
+    }
 }
+
+
+
+
+
+
+
+
+
