@@ -1,4 +1,5 @@
-// Time Complexity: O(n log n), The algorithm used is divide and conquer, 
+// Time Complexity: O(n log n), The algorithm used is divide 
+// and conquer, 
 // So in each level one full array traversal is needed and there are log n levels 
 // so the time complexity is O(n log n).
 // Space Compelxity:O(1), No extra space is required.
@@ -20,7 +21,11 @@ int merge(int arr[], int temp[], int low, int mid, int high)
     while((i <= mid - 1) && (j <= high))
     {
         if(arr[i] <= arr[j])
-            temp[k++] = arr[i++];
+        {
+            //temp[k++] = arr[i++];
+            temp[k] = arr[i];
+            k++, i++;
+        }
         else
         {
             temp[k++] = arr[j++];

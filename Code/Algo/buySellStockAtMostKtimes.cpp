@@ -16,7 +16,7 @@ int maxProfit(int price[], int n, int k)
     for(int i = 1; i <= k; i++)
     {
         int prevDiff = INT_MIN;
-        for(int j = 1; j < n; j++)
+        for(int j = 1; j <= n; j++)
         {
             prevDiff = max(prevDiff, profit[i-1][j-1] - price[j-1]);
             profit[i][j] = max(profit[i][j-1], price[j] + prevDiff);  

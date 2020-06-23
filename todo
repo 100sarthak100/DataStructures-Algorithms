@@ -16,3 +16,22 @@ quadirateral overlap (find if 2 rectangles overlap)
 https://leetcode.com/discuss/general-discussion/685315/biweekly-contest-28
 Merge two sorted Arrays without extra space 
 Merge k sorted arrays
+
+Sum over Subsets | Dynamic Programming
+count of subset such that (a[i] & a[j]) is a power of 2 
+maximum count of pairs with minimum differnece as k
+
+suffix array construct
+lcp construct from lcp
+//http://web.stanford.edu/class/cs97si/suffix-array.pdf
+longest duplicate substring using sa/lcp and with robin karp
+kmp algo
+
+
+// main
+https://github.com/donnemartin/system-design-primer
+// github leetcode pattern
+https://github.com/SeanPrashad/leetcode-patterns#background
+https://seanprashad.com/leetcode-patterns/
+// main all
+https://docs.google.com/document/d/1wUCqhVHydWiDk6FJdFLSMpgigNrGcs4OFZg0Wa7JGEw/edit
