@@ -50,3 +50,28 @@ int main()
 
     return 0;
 }
+
+// simple
+// common syntax
+// dp on trees
+// time - O(N)
+int height(Node* root, int &res)
+{
+    if(root == NULL)
+        return 0;
+    
+    int l = height(root->left, res);
+    int r = height(root->right, res);
+    
+    int temp = max(l, r) + 1;
+    int ans = max(temp, 1 + l + r);
+    res = max(res, ans);
+    return temp;
+}
+
+
+int diameter(Node* node) {
+    int ans = INT_MIN;
+    int h = height(node, ans);
+    return ans;
+}

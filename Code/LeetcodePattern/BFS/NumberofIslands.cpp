@@ -1,3 +1,63 @@
+class Solution {
+public:
+    bool isValid(vector<vector<char>>& grid, int x, int y)
+    {
+        return (x>=0 && y>=0 && x<grid.size() && y<grid[0].size() && grid[x][y] == '1');
+    }
+    
+    void bfs(vector<vector<char>>& grid,int i, int j)
+    {
+        int dx[] = {-1,0, 0, 1};
+        int dy[] = {0,-1, 1, 0};
+        
+        queue<pair<int, int>> q;
+        q.push({i, j});
+        grid[i][j] = '0';
+        
+        while(!q.empty())
+        {
+            int x = q.front().first;
+            int y = q.front().second;
+            q.pop();
+            
+            for(int p=0; p<4; p++)
+            {
+                int newX = x + dx[p];
+                int newY = y + dy[p];
+                if(isValid(grid, newX, newY))
+                {
+                    q.push({newX, newY});  
+                    grid[newX][newY] = '0';
+                }
+            }
+            
+        }
+        return;
+    }
+    
+    int numIslands(vector<vector<char>>& grid) {
+        int n = grid.size();
+        int m = grid[0].size();
+        if(n == 0 || m == 0)
+            return 0;
+        
+        int island = 0;
+        for(int i=0; i<grid.size(); i++)
+        {
+            for(int j=0; j<grid[i].size(); j++)
+            {
+                if(grid[i][j] == '1')
+                {
+                    bfs(grid, i, j);
+                    island++;
+                }
+            }
+        }
+        return island;
+    }
+};
+
+// dfs
 // only can traverse horizontally and vertically(4 directions)
 // this ex is for travel in 8 directions
 // // int M[][COL] = { { 1, 1, 0, 0, 0 },   char array
@@ -62,52 +122,3 @@ public:
         return count;
     }
 };
-
-// alternate method without set
-//to check
-bool isValid(int i, int j, bool** visited, int N)
-{
-    return (i >= 0 && j >= 0 && i <= N && j <= N && !visited[i][j]);
-}
-
-int minStepToReachTarget(int knightPos[], int targetPos[],int N) {
-    bool** visited = new bool*[N+1];
-    for(int i = 0;i<=N;i++)
-        visited[i] = new bool[N+1];
-    for(int i = 0;i<=N;i++)
-        for(int j = 0;j<=N;j++)
-            visited[i][j] = false;
-            
-    int level[N+1][N+1];
-    memset(level, 0, sizeof(level));
-            
-    static int dx[] = {-2,1,-1,2,-2,-1,1,2};
-    static int dy[] = {1,-2,2,-1,-1,-2,2,1};
-            
-            
-    queue<pair<int, int>> q;
-    q.push({knightPos[0], knightPos[1]});
-    while(!q.empty())
-    {
-        int x = q.front().first;
-        int y = q.front().second;
-        q.pop();
-        if(x == targetPos[0] && y == targetPos[1])
-            return level[x][y];
-        
-        for(int p = 0; p < 8; p++)
-        {
-            int newX = x+dx[p];
-            int newY = y+dy[p];
-        
-            if(isValid(newX, newY, visited, N))
-            {
-                level[newX][newY] = level[x][y] + 1;
-                visited[newX][newY] = true;
-                q.push({newX, newY});
-            }
-        }
-        
-    }
-    return -1;
-}

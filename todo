@@ -21,6 +21,8 @@ Sum over Subsets | Dynamic Programming
 count of subset such that (a[i] & a[j]) is a power of 2 
 maximum count of pairs with minimum differnece as k
 
+Nodes from given two BSTs with sum equal to X
+
 suffix array construct
 lcp construct from lcp
 //http://web.stanford.edu/class/cs97si/suffix-array.pdf
