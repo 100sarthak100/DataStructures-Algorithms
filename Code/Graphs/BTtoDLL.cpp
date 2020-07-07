@@ -1,3 +1,14 @@
+// Given a Binary Tree (BT), convert it to a 
+// Doubly Linked List(DLL) In-Place. 
+
+// Extracted Double Linked list is:
+// 0 1 2 3 4 5 6 7 8 9
+
+// Time Complexity: O(n), as the solution does a single 
+// traversal of given Binary Tree.
+
+// reverse inorder traversal because inserting at the front of
+// the DLL;
 #include <bits/stdc++.h>
 using namespace std;
 

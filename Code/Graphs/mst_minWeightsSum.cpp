@@ -1,4 +1,5 @@
-// PRIM'S ALGORITHM (to find the sum of weights of edges of a Minimum Spanning Tree)
+// PRIM'S ALGORITHM (to find the sum of weights of edges of a 
+// Minimum Spanning Tree)
 #include <bits/stdc++.h>
 using namespace std;
 

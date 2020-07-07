@@ -5,6 +5,18 @@
 
 // o/p = 1
 
+// A value of cell 1 means Source.
+// A value of cell 2 means Destination.
+// A value of cell 3 means Blank cell.
+// A value of cell 0 means Blank Wall.
+
+// Testcase 2: The matrix for the above given input is:
+// 0 3 2
+// 3 0 0
+// 1 0 0
+// From the matrix we can see that there does not exists any
+//  path to reach destination 2 from source 1.
+
 #include <bits/stdc++.h>
 using namespace std;
 

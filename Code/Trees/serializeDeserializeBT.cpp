@@ -1,3 +1,7 @@
+// Serialization is to store tree in a file so that it can be later 
+// restored. The structure of tree must be maintained. 
+// Deserialization is reading tree back from file.
+
 // using preorder traversal
 
 // Input:
@@ -7,6 +11,9 @@
 // Output:
 // 2 1 3
 // 40 20 60 10 30
+
+// Expected Time Complexity: O(N).
+// Expected Auxiliary Space: O(N).
 
 void serialize(Node *root,vector<int> &A)
 {

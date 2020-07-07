@@ -1,3 +1,11 @@
+// Let T be a rooted tree. The lowest common ancestor between two 
+// nodes n1 and n2 is defined as the lowest node in T that has both 
+// n1 and n2 as descendants 
+// (where we allow a node to be a descendant of itself).
+
+// Time complexity of the above solution is O(n)
+// worst case O(h)
+
 #include <bits/stdc++.h>
 using namespace std;
 

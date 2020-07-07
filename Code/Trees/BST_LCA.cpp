@@ -1,5 +1,12 @@
 // least common ancestor O(n) (for BST)
 // iterative
+
+// Time Complexity: O(h).
+// The Time Complexity of the above solution is O(h), where h is 
+// the height of the tree.
+// Space Complexity: O(1).
+// The space complexity of the above solution is constant.
+
 Node *lca(Node *root, int v1, int v2)
 {
     while (root != NULL)

@@ -14,7 +14,8 @@
 //    2
 //       \
 //        3 
-// The max difference in height of left subtree and right subtree is 2, which is greater than 1. Hence unbalanced.
+// The max difference in height of left subtree and right subtree 
+// is 2, which is greater than 1. Hence unbalanced.
 // Testcase2: The tree is
 //                            10
 //                         /        \
@@ -60,3 +61,35 @@ bool isBalanced(Node *root)
         return true;
     else return false;
 }
+
+// using pass by reference
+class Solution {
+public:
+    bool balanced(TreeNode* root, int &height)
+    {
+        if(root == NULL)
+        {
+            height = 0;
+            return true;
+        }
+        
+        int lh=0, rh=0;
+        
+        bool l = balanced(root->left, lh);
+        bool r = balanced(root->right, rh);
+        
+        height = (lh > rh) ? lh + 1 : rh + 1;
+        
+        if(abs(lh - rh) >= 2)
+            return false;
+        else
+            return l&&r;
+        
+    }
+    
+    bool isBalanced(TreeNode* root) {
+        int height = 0;
+        bool b = balanced(root, height);
+        cout<<height<<endl;return b;
+    }
+};

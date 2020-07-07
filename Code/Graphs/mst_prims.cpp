@@ -32,8 +32,9 @@ long long prim(int x)
             if (marked[y] == false)
                 Q.push(adj[x][i]);
         }
-        return minimumCost;
+        
     }
+    return minimumCost;
 }
 
 int main()
