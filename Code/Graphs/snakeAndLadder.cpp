@@ -20,7 +20,6 @@ struct queueEntry
     int dist;
 };
 
-
 int minDiceThrow(int moves[], int n)
 {
     bool* visited = new bool[n];

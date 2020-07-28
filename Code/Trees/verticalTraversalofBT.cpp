@@ -14,14 +14,16 @@
 //             3
 //             /
 //          4
-// As it is evident from the above diagram that during vertical traversal 2, 4 will come first, then 3. So output is 2 1 5 3
+// As it is evident from the above diagram that during vertical 
+// traversal 2, 4 will come first, then 3. So output is 2 1 5 3
 // Testcase2:
 //              1
 //            /     \
 //          2       3
 //       /     \        \
 //     4       5       6
-// As it is evident from the above diagram that during vertical traversal 4 will come first, then 2, then 1,5, then 3 and then 6. So the output is 4 2 1 5 3 6.
+// As it is evident from the above diagram that during vertical 
+//traversal 4 will come first, then 2, then 1,5, then 3 and then 6. So the output is 4 2 1 5 3 6.
 // Time Complexity of above implementation is O(n Log n)
 
 void verticalOrder(Node *root)

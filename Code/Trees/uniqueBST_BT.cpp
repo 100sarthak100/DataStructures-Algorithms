@@ -12,7 +12,7 @@
 //     /     /       \                 \
 //    2     1         2                 3
 
-
+// for bst
 class Solution {
 public:
     unsigned long int binomialCoeff(unsigned int n, unsigned int k)
@@ -46,6 +46,7 @@ public:
 // Count of BST with 5 nodes is 42
 // Count of binary trees with 5 nodes is 5040
 
+// for bt
 #include <bits/stdc++.h>
 using namespace std;
 

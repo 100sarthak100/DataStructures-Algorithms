@@ -34,7 +34,7 @@
 bool isBalancedUtil(Node* root, int* height)
 {
     int lh = 0, rh = 0;
-    int l = 0, r = 0;
+    bool l = 0, r = 0;
     
     if(root == NULL)
     {
