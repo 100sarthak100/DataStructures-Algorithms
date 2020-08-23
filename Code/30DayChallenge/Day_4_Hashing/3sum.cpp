@@ -90,6 +90,12 @@ int main()
 // 3 sum (sum == 0) triplets print all
 // can print any sum == k triplets
 // two pointers
+// best method
+
+// TIME - O(N^2)
+// Space - O(N)
+// sort - O(n logn) < O(N*2)
+
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {

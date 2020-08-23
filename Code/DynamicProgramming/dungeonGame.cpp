@@ -4,6 +4,20 @@
 //  initially positioned in the top-left room and must fight 
 // his way through the dungeon to rescue the princess.
 
+// The knight has an initial health point represented by a positive 
+// integer. If at any point his health point drops to 
+// 0 or below, he dies immediately.
+
+// Some of the rooms are guarded by demons, so the knight loses 
+// health (negative integers) 
+// upon entering these rooms; other rooms are either empty (0's) 
+// or contain magic orbs that increase the knight's health (positive 
+// integers).
+
+// In order to reach the princess as quickly as possible, 
+// the knight decides to move only rightward or downward in each 
+// step.
+
 // -2 	 -3	3
 // -5	 -10   1
 // 10	  30  -5

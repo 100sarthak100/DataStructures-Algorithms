@@ -60,6 +60,8 @@ int bfs(int moves[], int sz)
 	point p = {1, 0};
 	queue<point> q;
 	q.push(p);
+	int snakes = 0;
+	int slides = 0;
 	while(!q.empty())
 	{
 		p = q.front();
@@ -78,7 +80,13 @@ int bfs(int moves[], int sz)
 				newp.dist = p.dist + 1;
 
 				if(moves[i] != -1)
+				{
 					newp.v = moves[i];
+					if(i > moves[i])
+						snakes++;
+					else
+						slides++;
+				}
 				else
 					newp.v = i;
 				q.push(newp);

@@ -40,7 +40,7 @@ bool find(string s, int i, int j, int n, int m, int k)
         if(isSafe(newX, newY, n, m) && boggle[newX][newY] == s[k])
             return find(s, newX, newY, n, m, k);
     }
-    
+    return false;
 }
 
 

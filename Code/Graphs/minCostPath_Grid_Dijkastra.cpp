@@ -8,7 +8,7 @@ struct cell
     cell(int x, int y, int distance) : x(x), y(y), distance(distance) {}
 };
 
-bool operator<(const cell &a, const cell &b)
+bool operator <(const cell &a, const cell &b)
 {
     if (a.distance == b.distance)
     {
@@ -81,4 +81,78 @@ int main()
                 cin >> arr[i][j];
         cout << shortest(arr, n, m) << endl;
     }
+}
+
+// another soln
+#include<bits/stdc++.h>
+using namespace std;
+
+int grid[101][101];
+int dx[] = {-1, 0, 0, 1};
+int dy[] = {0, -1, 1, 0};
+
+typedef pair<int, pair<int, int>> pll;
+
+bool isValid(int x, int y, int n)
+{
+    return (x>=0 && y>=0 && x<n && y<n);
+}
+
+int minCost(int n)
+{
+    bool visited[n+1][n+1];
+    for(int i=0; i<=n; i++)
+        for(int j=0; j<=n; j++)
+            visited[i][j] = false;
+    
+    int dp[n+1][n+1];
+    for(int i=0; i<=n; i++)
+        for(int j=0; j<=n; j++)
+            dp[i][j] = INT_MAX;
+    
+    pll p = {grid[0][0], {0, 0}};
+    priority_queue<pll, vector<pll>, greater<pll>> q;
+    q.push(p);
+    dp[0][0] = grid[0][0];
+    while(!q.empty())
+    {
+        p = q.top();
+        q.pop();
+        int x = p.second.first;
+        int y = p.second.second;
+        if(visited[x][y])
+            continue;
+        
+        visited[x][y] = true;
+        
+        for(int pp=0; pp<4; pp++)
+        {
+            int newx = dx[pp] + x;
+            int newy = dy[pp] + y;
+            if(!isValid(newx, newy, n) || visited[newx][newy])
+                continue;
+            
+            if(dp[newx][newy] > grid[newx][newy] + dp[x][y])
+            {
+                dp[newx][newy] = grid[newx][newy] + dp[x][y];
+                q.push({dp[newx][newy], {newx, newy}});
+            }
+        }
+    }
+    return dp[n-1][n-1];
+}
+
+int main()
+ {
+	int t;cin>>t;
+	while(t--)
+	{
+	    int n;cin>>n;
+	    for(int i=0; i<n; i++)
+	        for(int j=0; j<n; j++)
+	            cin>>grid[i][j];
+	   
+	   cout<<minCost(n)<<endl;
+	}
+	return 0;
 }

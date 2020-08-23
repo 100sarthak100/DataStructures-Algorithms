@@ -19,6 +19,7 @@ using namespace std;
 void insertionSort(int arr[], int n)
 {
     int i, j;
+    int iter = 0;
     for(int i=1; i<n; i++)
     {
         int key = arr[i];
@@ -30,6 +31,11 @@ void insertionSort(int arr[], int n)
             j--;
         }
         arr[j+1] = key;
+        iter++;
+        cout<<iter<<endl;
+        for(int i=0; i<n; i++)
+            cout<<arr[i]<<" ";
+        cout<<endl;
     }
 }
 
@@ -42,7 +48,7 @@ void printArray(int arr[], int n)
 
 int main()
 {
-    int arr[] = { 12, 11, 13, 5, 6 };  
+    int arr[] = { 8, 10, 2, 12, 15,3 };  
     int n = sizeof(arr) / sizeof(arr[0]);  
     insertionSort(arr, n);
     printArray(arr, n);

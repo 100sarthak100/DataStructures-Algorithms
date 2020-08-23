@@ -57,3 +57,60 @@ public:
         return ret;
     }
 };
+
+
+
+
+
+
+
+// working code
+class Solution {
+public:
+    
+    void spiral(vector<vector<int>> matrix,vector<int> &ans,int m,int n){
+        int startRow = 0;
+        int endRow = m-1;
+        int startCol = 0;
+        int endCol = n-1;
+        
+        while(startRow <= endRow and startCol <= endCol){
+            for(int i=startCol; i<=endCol; i++){
+                ans.push_back(matrix[startRow][i]);
+            }
+            startRow++;
+            
+            for(int i=startRow; i<=endRow; i++){
+                ans.push_back(matrix[i][endCol]);
+            }
+            endCol--;
+            
+            if(startRow <= endRow){
+                for(int i=endCol ;i>= startCol; i--){
+                    ans.push_back(matrix[endRow][i]);
+                }
+                endRow--;
+            }
+            
+            if(startCol <= endCol){
+                for(int i=endRow ;i >= startRow; i--){
+                    ans.push_back(matrix[i][startCol]);
+                }
+                startCol++;
+            }
+        }
+        
+    }
+    
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        vector<int> ans;
+        if(matrix.size() == 0){
+            return ans;
+        }
+        
+        int row = matrix.size();
+        int col = matrix[0].size();
+        spiral(matrix,ans,row,col);
+        return ans;
+    }
+};

@@ -21,6 +21,9 @@ int lengthCommonSubStr(string x, string y)
     // making a 2D array to store the length (Dynamic Programming)
     int dp[n + 1][m + 1];
     // using 2 for loops
+    int maxLen = 0;
+    int endIndex = n;
+
     for (int i = 0; i <= n; ++i)
     {
         for (int j = 0; j <= m; j++)
@@ -29,7 +32,14 @@ int lengthCommonSubStr(string x, string y)
             if (i == 0 || j == 0)
                 dp[i][j] = 0;
             else if (x[i - 1] == y[j - 1])
+            {
                 dp[i][j] = 1 + dp[i - 1][j - 1];
+                if(dp[i][j] > maxLen)
+                {
+                    maxLen = dp[i][j];
+                    endIndex = i;
+                }
+            }
             else
                 dp[i][j] = 0;
 
@@ -43,6 +53,9 @@ int lengthCommonSubStr(string x, string y)
         cout << endl;
     }
 
+    string commmonStr = x.substr(endIndex - maxLen, maxLen);
+    cout<<commmonStr<<endl;
+
     return soln;
 }
 
@@ -54,8 +67,8 @@ int main()
     while (t--)
     {
         // input n and m (length of 2 strings)
-        int n, m;
-        cin >> n >> m;
+        // int n, m;
+        // cin >> n >> m;
         // input string x and y
         string x, y;
         cin >> x >> y;
