@@ -51,9 +51,9 @@ int knapSack(int W, int wt[], int val[], int n)
 
 int main()
 {
-    int val[] = {1, 2, 3};
-    int wt[] = {4, 5, 1};
-    int W = 4;
+    int val[] = {2, 4 ,4 , 5};
+    int wt[] = {4, 4, 6, 8};
+    int W = 15;
     int n = sizeof(val)/sizeof(val[0]);
     cout<<knapSack(W, wt, val, n);
     return 0;

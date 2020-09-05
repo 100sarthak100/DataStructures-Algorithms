@@ -2,6 +2,8 @@
 // S which will contain 
 // all the characters in T in complexity O(n).
 
+// Order of chars doesn't matters
+
 // Example:
 
 // Input: S = "ADOBECODEBANC", T = "ABC"

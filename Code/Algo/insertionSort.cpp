@@ -13,6 +13,8 @@
 // It can also be useful when input array is almost sorted, only few 
 // elements are misplaced in complete big array.
 
+// The way we sort playing cards
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -31,11 +33,11 @@ void insertionSort(int arr[], int n)
             j--;
         }
         arr[j+1] = key;
-        iter++;
-        cout<<iter<<endl;
-        for(int i=0; i<n; i++)
-            cout<<arr[i]<<" ";
-        cout<<endl;
+        // iter++;
+        // cout<<iter<<endl;
+        // for(int i=0; i<n; i++)
+        //     cout<<arr[i]<<" ";
+        // cout<<endl;
     }
 }
 

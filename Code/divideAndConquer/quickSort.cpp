@@ -41,6 +41,7 @@
 // Therefore merge operation of merge sort can be implemented 
 // without extra space for linked lists.
 
+//  T(n) = T(k) + T(n-k-1) + \theta(n)
 //  QuickSort using Lomuto partition scheme
 #include <bits/stdc++.h>
 using namespace std;
@@ -97,4 +98,32 @@ int main()
     return 0;
 }
 
+// Hoare’s scheme is more efficient than Lomuto’s partition scheme 
+// because it does three times fewer swaps on average, and it creates 
+// efficient partitions even when all values are equal.
 // Hoare’s Partition Scheme
+int partition(int arr[], int low, int high)
+{
+    int pivot = arr[low];
+    int i = low - 1, j = high + 1;
+
+    while(true)
+    {
+        // find leftmost elemnt greater then or equal to pivot
+        do
+        {
+            i++;
+        }while(arr[i] < pivot);
+
+        // find rightmost elemnt smaller then or equal to pivot
+        do
+        {
+            j--;
+        }while(arr[j] > pivot);
+
+        if(i >= j)
+            return j;
+        
+        swap(&arr[i], &arr[j]);
+    }
+}

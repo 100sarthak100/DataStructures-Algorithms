@@ -52,11 +52,11 @@ int bfs(int arr[], int n)
 				dist[x] = dist[p] + 1;
 				q.push_back(x);
 			}
-			if(dist[arr[p]] > dist[p])
-			{
-				dist[arr[p]] = dist[p];
-				q.push_front(arr[p]);
-			}
+		}
+		if(dist[arr[p]] > dist[p])
+		{
+			dist[arr[p]] = dist[p];
+			q.push_front(arr[p]);
 		}
 	}
 	return dist[n];

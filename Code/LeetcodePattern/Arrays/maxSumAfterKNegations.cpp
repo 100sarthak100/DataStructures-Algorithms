@@ -42,9 +42,9 @@ int partition(int arr[], int l, int r)
 {
     int pivot = arr[r];
     int j = l - 1;
-    for(int i=l; i<r; i++)
+    for(int i=l; i<=r-1; i++)
     {
-        if(arr[i] < pivot)
+        if(arr[i] <= pivot)
         {
             j++;
             swap(&arr[i], &arr[j]);
