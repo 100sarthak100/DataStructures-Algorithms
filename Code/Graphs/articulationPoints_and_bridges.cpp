@@ -106,6 +106,7 @@ int main()
 			cout<<i<<" ";
 
 	cout<<endl;
+	
 
 	sort(bridges.begin(), bridges.end());
 	cout<<bridges.size()<<endl; // number of bridges

@@ -61,7 +61,6 @@ Node* minVal(Node* root)
         root = root->left;
     
     return root;
-    
 }
 
 Node *deleteNode(Node *root,  int X)

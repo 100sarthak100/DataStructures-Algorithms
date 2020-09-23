@@ -39,7 +39,7 @@ public:
         }
     }
     
-    vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections)    {
+    vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections) {
         adj.resize(n);
         visited.resize(n, false);
         low.resize(n, 0);
@@ -60,6 +60,59 @@ public:
     }
 };
 
-
+// another same solution
+class Solution {
+public:
+    vector<vector<int>> adj;
+    vector<bool> visited;
+    vector<int> low;
+    vector<int> in;
+    vector<vector<int>> bridge;
+    int timer = 0;
+    
+    void dfs(int node, int parent)
+    {
+        visited[node] = true;
+        low[node] = in[node] = timer;
+        timer++;
+        
+        for(auto neighbor : adj[node])
+        {
+            if(visited[neighbor] && neighbor != parent)
+                low[node] = min(low[node], in[neighbor]);
+            else if(!visited[neighbor])
+            {
+                dfs(neighbor, node);
+                
+                low[node] = min(low[node], low[neighbor]);
+                
+                if(low[neighbor] > in[node])
+                    bridge.push_back({node, neighbor});
+            }
+        }
+        return;
+    }
+    
+    vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections) {
+        visited.resize(n, false);
+        in.resize(n, 0);
+        low.resize(n, 0);
+        adj.resize(n);
+        
+        for(auto i : connections)
+        {
+            adj[i[0]].push_back(i[1]);
+            adj[i[1]].push_back(i[0]);
+        }
+        
+        for(int i=0; i<n; i++)
+        {
+            if(!visited[i])
+                dfs(i, -1);
+        }
+            
+        return bridge;
+    }
+};
 
 
