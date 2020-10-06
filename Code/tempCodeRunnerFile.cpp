@@ -1,4 +1,0 @@
-void reverse(int &n)
-// {
-    
-// }
