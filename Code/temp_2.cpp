@@ -112,55 +112,88 @@
 //     }
 // };
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
-void swap(char *a, char *b)
+// void swap(char *a, char *b)
+// {
+//     char temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+
+// int strToInt(string s)
+// {
+//     int n = s.size();
+//     int ret = 0;
+//     int i = 0;
+//     while(i < n)
+//     {
+//         int temp = s[i] - '0';
+//         ret = ret*10 + temp;
+//         i++;
+//     }
+//     return ret;
+// }
+
+// int func(int n)
+// {
+//     int arr[] = {9, 8, 7, 6, 5, 4, 3, 2 ,1, 0};
+//     string ret;
+//     while(n > 0)
+//     {
+//         int temp = n%10;
+//         ret += (arr[temp] + '0');
+//         n = n/10;
+//     }
+//     int i = 0, j = ret.size()-1;
+//     while(i < j)
+//     {
+//         swap(&ret[i], &ret[j]);
+//         i++;
+//         j--;
+//     }
+//     int myint = strToInt(ret);
+//     return myint;
+// }
+
+// int main()
+// {
+//     int n = 80;
+//     cout<<func(n)<<endl;
+// }
+
+
+// #include <stdio.h>
+
+// int main()
+// {
+    // int a;
+    // char *x;
+    // x = (char*) &a;
+    // a = 512;
+    // x[0] = 1;
+    // x[1] = 2;
+    // printf("%d\n", a);
+    // return 0;
+
+    // char a[] = {'A', 'B', 'C', 'D'};
+    // char* ppp = &a[0];
+    // *ppp++;
+    // printf("%c %c\n", *++ppp, --*ppp);
+
+    // int *ptr1, *ptr2;
+    // ptr1 = malloc(4);
+    // *ptr1 = 10;
+    // *ptr2 = free(ptr1);
+    // printf("%d\n", *ptr2);
+    // return 0;
+
+// }
+
+#include <stdio.h>
+void main()
 {
-    char temp = *a;
-    *a = *b;
-    *b = temp;
+    int s[][2] = {{2,6}, (4,8)};
+    printf("%d", s);
 }
-
-int strToInt(string s)
-{
-    int n = s.size();
-    int ret = 0;
-    int i = 0;
-    while(i < n)
-    {
-        int temp = s[i] - '0';
-        ret = ret*10 + temp;
-        i++;
-    }
-    return ret;
-}
-
-int func(int n)
-{
-    int arr[] = {9, 8, 7, 6, 5, 4, 3, 2 ,1, 0};
-    string ret;
-    while(n > 0)
-    {
-        int temp = n%10;
-        ret += (arr[temp] + '0');
-        n = n/10;
-    }
-    int i = 0, j = ret.size()-1;
-    while(i < j)
-    {
-        swap(&ret[i], &ret[j]);
-        i++;
-        j--;
-    }
-    int myint = strToInt(ret);
-    return myint;
-}
-
-int main()
-{
-    int n = 80;
-    cout<<func(n)<<endl;
-}
-
-
