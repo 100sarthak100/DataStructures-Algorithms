@@ -95,7 +95,7 @@ int main()
 // TIME - O(N^2)
 // Space - O(N)
 // sort - O(n logn) < O(N*2)
-
+// also works for duplicates
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
@@ -140,3 +140,68 @@ public:
         return ret;
     }
 };
+
+/////// Triplet sum in array
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int partition(int arr[], int low, int high)
+{
+    int pivot = arr[high];
+    int i = low - 1;
+    
+    for(int j=low; j<high; j++)
+    {
+        if(arr[j] <= pivot)
+        {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i+1], &arr[high]);
+    return (i+1);
+}
+
+void quickSort(int arr[], int low, int high)
+{
+    if(low < high)
+    {
+        int pi = partition(arr, low, high);
+        
+        quickSort(arr, low, pi-1);
+        quickSort(arr, pi+1, high);
+        
+    }
+}
+
+bool checkVal(int arr[], int i, int j, int k, int X)
+{
+    while(j < k)
+    {
+        int ans = arr[i] + arr[j] + arr[k];
+        if(ans == X)
+            return true;
+        else if(ans < X)
+            j++;
+        else if(ans > X)
+            k--;
+    }
+    
+    return false;
+}
+
+bool find3Numbers(int arr[], int N, int X)
+{
+    sort(arr, arr+N);
+    for(int i=0; i<N-2; i++)
+    {
+        if(checkVal(arr, i, i+1, N-1, X))
+            return true;
+    }
+    
+    return false;
+}

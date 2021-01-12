@@ -22,6 +22,16 @@ int maxProfit(int price[], int n, int k)
             profit[i][j] = max(profit[i][j-1], price[j] + prevDiff);  
         }
     }
+    cout<<endl;
+    for(int i=0; i<=k; i++)
+    {
+        for(int j=0; j<=n; j++)
+        {
+            cout<<profit[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
     return profit[k][n-1];
 }
 

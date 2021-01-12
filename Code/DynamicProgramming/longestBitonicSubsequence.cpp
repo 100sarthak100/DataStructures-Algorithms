@@ -27,10 +27,11 @@ int lbs(int arr[], int n)
             if (arr[i] > arr[j] && lis[i] < lis[j] + 1)
             {
                 lis[i] = lis[j] + 1;
-                //cout<<lis[i]<<endl;
+                //cout<<lis[i]<<" ";
             }
         }
     }
+    cout<<endl;
     for (int i = 0; i < n; ++i)
         cout << lis[i] << " ";
     cout << endl;
