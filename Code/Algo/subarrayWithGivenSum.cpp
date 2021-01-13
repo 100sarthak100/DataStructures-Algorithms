@@ -13,6 +13,7 @@
 // Output: No subarray found
 // Explanation: There is no subarray with 0 sum
 
+//other method is good
 
 #include <bits/stdc++.h>
 using namespace std;
