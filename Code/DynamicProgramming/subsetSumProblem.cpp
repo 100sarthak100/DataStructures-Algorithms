@@ -58,7 +58,7 @@ bool subsetSum(int arr[], int n, int sum)
     {
         for(int j = 1; j<=sum; j++)
         {
-            if(j >= arr[i-1])
+            if(arr[i-1] <= j)
                 dp[i][j] = dp[i-1][j - arr[i-1]] || dp[i-1][j];
             else
                 dp[i][j] = dp[i-1][j];

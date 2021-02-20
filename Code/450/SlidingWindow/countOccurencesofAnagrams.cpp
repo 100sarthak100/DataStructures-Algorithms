@@ -56,9 +56,7 @@ public:
 	            i++;
 	            j++;
 	        }
-	        
 	    }
 	    return ans;
 	}
-
 };
